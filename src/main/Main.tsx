@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Product } from "../interfaces/product";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   const [products, setProducts] = useState([] as Product[]);
@@ -35,6 +36,9 @@ const Main = () => {
     <main role="main">
       <div className="album py-5 bg-light">
         <div className="container">
+          <Link to={`/admin/products/`} className="mb-4 btn btn-sm btn-primary">
+            To Admin App
+          </Link>
           <div className="row">
             {products.map((p: Product) => {
               return (

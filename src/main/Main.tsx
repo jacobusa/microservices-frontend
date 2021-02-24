@@ -7,7 +7,7 @@ const Main = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch("http://localhost:8000/api/products");
+      const response = await fetch("http://159.203.35.248:8000/api/products");
 
       const data = await response.json();
 
@@ -16,7 +16,7 @@ const Main = () => {
   }, []);
 
   const like = async (id: number) => {
-    await fetch(`http://localhost:8001/api/products/${id}/like`, {
+    await fetch(`http://159.203.35.248:8001/api/products/${id}/like`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     });

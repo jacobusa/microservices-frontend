@@ -8,7 +8,7 @@ const Main = () => {
   useEffect(() => {
     (async () => {
       const response = await fetch(
-        "https://api.microservices-demoapp54321.xyz/main/api/products"
+        "https://api.microservices-demoapp54321.xyz/admin/api/products"
       );
 
       const data = await response.json();
@@ -46,6 +46,7 @@ const Main = () => {
           </Link>
           <div className="row">
             {products.map((p: Product) => {
+              console.log(p);
               return (
                 <div className="col-md-4" key={p.id}>
                   <div className="card mb-4 shadow-sm">

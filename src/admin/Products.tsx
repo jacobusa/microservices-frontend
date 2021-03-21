@@ -8,7 +8,9 @@ const Products = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch("http://159.203.35.248:8000/api/products");
+      const response = await fetch(
+        "https://api.microservices-demoapp54321.xyz/admin/api/products"
+      );
 
       const data = await response.json();
 
@@ -18,9 +20,12 @@ const Products = () => {
 
   const del = async (id: number) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
-      await fetch(`http://159.203.35.248:8000/api/products/${id}`, {
-        method: "DELETE",
-      });
+      await fetch(
+        `https://api.microservices-demoapp54321.xyz/admin/api/products/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
 
       setProducts(products.filter((p: Product) => p.id !== id));
     }

@@ -16,7 +16,7 @@ const ProductsEdit = (props: PropsWithRef<any>) => {
   useEffect(() => {
     (async () => {
       const response = await fetch(
-        `http://159.203.35.248:8000/api/products/${props.match.params.id}`
+        `https://api.microservices-demoapp54321.xyz/admin/api/products/${props.match.params.id}`
       );
 
       const product: Product = await response.json();
@@ -30,7 +30,7 @@ const ProductsEdit = (props: PropsWithRef<any>) => {
     e.preventDefault();
 
     await fetch(
-      `http://159.203.35.248:8000/api/products/${props.match.params.id}`,
+      `https://api.microservices-demoapp54321.xyz/admin/api/products/${props.match.params.id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

@@ -10,14 +10,17 @@ const ProductsCreate = () => {
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
 
-    await fetch("http://159.203.35.248:8000/api/products", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title,
-        image,
-      }),
-    });
+    await fetch(
+      "https://api.microservices-demoapp54321.xyz/admin/api/products",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title,
+          image,
+        }),
+      }
+    );
 
     setRedirect(true);
   };
